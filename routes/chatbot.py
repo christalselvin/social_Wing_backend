@@ -5,6 +5,7 @@ import random
 # Create a blueprint for the bot routes
 bot_bp = Blueprint('bot', __name__)
 
+
 # Bot configuration
 BOT_NAME = "Jery"
 

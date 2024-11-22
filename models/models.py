@@ -13,16 +13,12 @@ db = SQLAlchemy(app)
 class Users(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
-    name_of_bussiness = db.Column(db.String(100), nullable=False)
-    email = db.Column(db.String(100), nullable=False)
+    email = db.Column(db.String(100), nullable=False, unique=True)
     phone_number = db.Column(db.String(20), nullable=False)
+    name_of_business = db.Column(db.String(100), nullable=True)
 
-    def __init__(self, name, name_of_bussiness, email, phone_number):
+    def __init__(self, name, email, phone_number, name_of_business=None):
         self.name = name
-        self.name_of_bussiness = name_of_bussiness
         self.email = email
         self.phone_number = phone_number
-
-    def __repr__(self):
-        return f"<User {self.name} - {self.name_of_bussiness}>"
-
+        self.name_of_business = name_of_business

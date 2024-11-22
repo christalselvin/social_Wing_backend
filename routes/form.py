@@ -4,7 +4,7 @@ from models.models import db, Users
 
 
 bot_bh = Blueprint('form', __name__)
-app = Flask(__name__)
+app = Flask( __name__)
 
 # Configuration (Replace with your actual credentials)
 app.config['MAIL_SERVER'] = 'smtp.googlemail.com'

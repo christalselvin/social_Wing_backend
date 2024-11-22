@@ -17,7 +17,7 @@ class Users(db.Model):
     phone_number = db.Column(db.String(20), nullable=False)
     name_of_business = db.Column(db.String(100), nullable=True)
 
-    def __init__(self, name, email, phone_number, name_of_business=None):
+    def __init__(self, name, email, phone_number, name_of_business):
         self.name = name
         self.email = email
         self.phone_number = phone_number

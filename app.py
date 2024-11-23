@@ -4,10 +4,14 @@ from routes.chatbot import bot_bp
 from flask_mail import Mail
 from routes.form import bot_bh
 from models.models import db
+from flask_cors import CORS  # Import CORS
 
 def create_app():
     # Create the Flask app instance
     app = Flask(__name__)
+
+    # Enable CORS for all routes (you can also specify origins or other options if needed)
+    CORS(app)
 
     # Load configurations
     app.config.from_object('config.config')

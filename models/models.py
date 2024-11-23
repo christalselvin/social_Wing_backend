@@ -7,7 +7,7 @@ class Users(db.Model):
     name = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
     phone_number = db.Column(db.String(15), nullable=False)
-    business = db.Column(db.String(100), nullable=True)
+    name_of_business = db.Column(db.String(100), nullable=True)
 
     def __repr__(self):
         return f'<User {self.name}>'

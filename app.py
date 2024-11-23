@@ -1,13 +1,16 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from routes.chatbot import bot_bp
-from flask_mail import Mail, Message
+from flask_mail import Mail
 from routes.form import bot_bh
 from models.models import db
 
 def create_app():
     # Create the Flask app instance
     app = Flask(__name__)
+
+    # Load configurations
+    app.config.from_object('config.config')
 
     # Configuration for SQLAlchemy and Mail (if needed)
     app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:1234@localhost/Christal"
@@ -23,6 +26,9 @@ def create_app():
     # Register blueprints with the app
     app.register_blueprint(bot_bp)
     app.register_blueprint(bot_bh)
+
+    # Initialize the Mail extension
+    mail = Mail(app)
 
     return app
 

@@ -1,14 +1,14 @@
-****Social Wynk Registration System****
+Social Wynk Registration System
 This project is a registration system for Social Wing, a platform designed to help businesses grow and connect. It uses Flask for the backend, integrates email notifications via SMTP, and stores user data in a database.
 
-****Features***
+Features
 User registration form with validation.
 Database integration for storing user information.
 Automated email notifications to users and admin upon registration.
 Responsive HTML email template with a logo and social links.
 Integration with Flask's static and template directories.
 
-***Technologies Used***
+Technologies Used
 Python: Core language for backend development.
 Flask: Framework for handling routes and templates.
 HTML & CSS: For the email template.

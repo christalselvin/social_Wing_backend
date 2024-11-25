@@ -7,23 +7,8 @@ Database integration for storing user information.
 Automated email notifications to users and admin upon registration.
 Responsive HTML email template with a logo and social links.
 Integration with Flask's static and template directories.
-******Project Structure*****
-Social_Wynk/
-├── app/
-│   ├── static/
-│   │   ├── images/
-│   │   │   └── social_wyns_email_log.jpeg  # Logo for the email template
-│   ├── templates/
-│   │   └── email.html                      # HTML email template
-│   ├── __init__.py                         # Flask app initialization
-│   ├── form.py                             # Blueprint for handling registration
-│   ├── models/
-│   │   ├── __init__.py                     # Database initialization
-│   │   └── models.py                       # User model definition
-├── requirements.txt                        # Python dependencies
-├── run.py                                  # Entry point for the application
-└── README.md                               # Project documentation
-Technologies Used
+
+***Technologies Used***
 Python: Core language for backend development.
 Flask: Framework for handling routes and templates.
 HTML & CSS: For the email template.

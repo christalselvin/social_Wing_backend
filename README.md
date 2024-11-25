@@ -1,5 +1,5 @@
 Social Wynk Registration System
-This project is a registration system for Social Wing, a platform designed to help businesses grow and connect. It uses Flask for the backend, integrates email notifications via SMTP, and stores user data in a database.
+This project is a registration system for Social Wynk, a platform designed to help businesses grow and connect. It uses Flask for the backend, integrates email notifications via SMTP, and stores user data in a PostgreSQL database.
 
 Features
 User registration form with validation.
@@ -7,7 +7,6 @@ Database integration for storing user information.
 Automated email notifications to users and admin upon registration.
 Responsive HTML email template with a logo and social links.
 Integration with Flask's static and template directories.
-
 Technologies Used
 Python: Core language for backend development.
 Flask: Framework for handling routes and templates.
@@ -18,23 +17,24 @@ Setup Instructions
 Prerequisites
 Python 3.x
 Virtual environment (optional but recommended)
-PostgreSQL 
+PostgreSQL
 Git (for version control)
 Steps
-Clone the Repository
-
+1. Clone the Repository
 bash
 Copy code
 git clone https://github.com/your-username/social-wynk.git
 cd social-wynk
-Install Dependencies Create and activate a virtual environment, then install the required packages:
+2. Install Dependencies
+Create and activate a virtual environment, then install the required packages:
 
 bash
 Copy code
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
-Set Up the Database Configure your database connection in models/models.py:
+3. Set Up the Database
+Configure your database connection in models/models.py:
 
 python
 Copy code
@@ -46,7 +46,8 @@ Copy code
 flask db init
 flask db migrate
 flask db upgrade
-Run the Application Start the Flask development server:
+4. Run the Application
+Start the Flask development server:
 
 bash
 Copy code
@@ -56,7 +57,9 @@ Open the application in your browser at http://127.0.0.1:5000.
 API Endpoints
 /api/send_email (POST)
 Description: Handles user registration and sends confirmation emails.
-Request Body: JSON
+
+Request Body:
+
 json
 Copy code
 {
@@ -66,15 +69,36 @@ Copy code
   "business": "Business Name"
 }
 Response:
-Success: {"message": "Emails sent and user registered successfully!"}
-Error: {"error": "Error message here"}
 
+Success:
 
+json
+Copy code
+{
+  "message": "Emails sent and user registered successfully!"
+}
+Error:
+
+json
+Copy code
+{
+  "error": "Error message here"
+}
 /api/chatbot (POST)
 Description: This endpoint processes user input, determines an appropriate response, and sends back a reply.
-Request Body: JSON
+
+Request Body:
+
 json
 Copy code
 {
   "message": "User's input message here"
+}
+Response:
+
+A JSON response containing the chatbot’s reply:
+json
+Copy code
+{
+  "response": "Chatbot's reply to the user message"
 }

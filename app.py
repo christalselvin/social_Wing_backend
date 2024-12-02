@@ -4,7 +4,9 @@ from routes.chatbot import bot_bp
 from flask_mail import Mail
 from routes.form import bot_bh
 from models.models import db
-from flask_cors import CORS  # Import CORS
+from flask_cors import CORS
+from routes.login import bot_lh
+from routes.picture_select import bot_pc
 
 def create_app():
     # Create the Flask app instance
@@ -30,6 +32,8 @@ def create_app():
     # Register blueprints with the app
     app.register_blueprint(bot_bp)
     app.register_blueprint(bot_bh)
+    app.register_blueprint(bot_lh)
+    app.register_blueprint(bot_pc)
 
     # Initialize the Mail extension
     mail = Mail(app)
@@ -40,3 +44,4 @@ def create_app():
 if __name__ == '__main__':
     app = create_app()
     app.run(host="0.0.0.0", port=5000, debug=True)
+

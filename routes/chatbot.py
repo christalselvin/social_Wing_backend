@@ -7,7 +7,7 @@ bot_bp = Blueprint('bot', __name__)
 
 
 # Bot configuration
-BOT_NAME = "Jery"
+BOT_NAME = "Honey"
 
 # Predefined responses
 R_EATING = f"I don't like eating anything because I'm a {BOT_NAME} obviously!"
@@ -16,7 +16,6 @@ R_ADVICE = "Stay focused and constantly moving to make your dreams come true!"
 # Predefined answers for specific questions
 THINK_ANSWERS = {
     "what is the meaning of life?": "The meaning of life is a philosophical question concerning the significance of life or existence in general.",
-    "what is the capital of France?": "The capital of France is Paris.",
     "how does the internet work?": "The internet is a global network of interconnected computers that communicate via standardized protocols.",
 }
 
@@ -54,9 +53,10 @@ def check_all_messages(message):
 
     # Add responses
     response(f'How can I help you? I\'m {BOT_NAME}!', ['hello', 'hi', 'hey'], single_response=True)
-    response('My name is Jery.', ['name'], single_response=True)
-    response('Check My Career Page.', ['job', 'assignment'], single_response=True)
-    response('Email: selvin472001@gmail.com', ['contact'], single_response=True)
+    response('My name is Honey', ['name'], single_response=True)
+    response('<a href="http://localhost:5173/contact">Contact</a>', ['job', 'assignment'], single_response=True)
+    response('<a href="mailto:socialwing02@gmail.com">Email Me</a>', ['Email'], single_response=True)
+    response('<a href="ph:8015544800">Contact</a>', ['Contact'], single_response=True)
     response('I\'m doing fine, and you?', ['how', 'are', 'you', 'doing'], required_words=['how'])
     response('Love you too!', ['i', 'love', 'you'], required_words=['love'])
     response('I\'m happy to chat with you!', ['bye', 'thank', 'thanks', 'goodbye'], single_response=True)

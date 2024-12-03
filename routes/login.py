@@ -17,7 +17,7 @@ def login():
         username = data.get('username')
         password = data.get('password')
 
-        if username == '1234' and password == 'abcd':
+        if username == 'aswin' and password == 'socialwing@02':
             return jsonify({'message': 'Login successful'}), 200
         else:
             return jsonify({'error': 'Login failed. Please check your credentials.'}), 401
